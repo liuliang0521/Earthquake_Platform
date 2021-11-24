@@ -1,0 +1,39 @@
+<!--pages/page1/page1.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">智能仓库存储识别</view>
+</cu-custom>
+<view id="body">
+  <button class="cu-btn block bg-green margin-tb-sm lg" bindtap="start">
+    启动摄像头
+  </button>
+  <view class="text-black text-bold text-xl">
+    识别结果为：
+  </view>
+  <view class="table">
+    <view class="tr">
+      <view class="th">物品</view>
+      <view class="th">数量</view>
+    </view>
+    <view class="tr" wx:if="{{nothing}}">
+      <view class="td">——</view>
+      <view class="td">——</view>
+    </view>
+    <view class="tr" wx:for="{{info_name}}" wx:for-index="key">
+      <view class="td">{{info_name[key]}}</view>
+      <view class="td">{{info_num[key]}}</view>
+    </view>
+  </view>
+
+  <view>
+    {{ans}}
+  </view>
+  <view class="text-black text-bold text-xl">
+    拍摄图片为：
+  </view>
+  <image src="{{picture}}"></image>
+  <view class="text-black text-bold text-xl">
+    识别图片为：
+  </view>
+  <image src="{{answer}}"></image>
+</view>

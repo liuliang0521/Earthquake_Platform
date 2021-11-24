@@ -1,0 +1,82 @@
+<view class="body">
+  <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">智能小车信息列表</view>
+</cu-custom>
+  <!--文章列表模板 begin-->
+  <template name="itmes">
+    <navigator url="../detail/detail?detail_id={{_id}}" hover-class="navigator-hover">
+      <view class="cu-card article no-card" wx:if="{{img!=''}}">
+        <view class="cu-item shadow">
+          <view class="title">
+            <view class="text-xxl">{{title}}</view>
+          </view>
+          <view class="content">
+            <view class="desc">
+              <view class="text-content">
+              <view>纬度：{{wd}}；经度：{{jd}}</view>
+              <view>{{content}}</view>
+              <view>{{cTime}}</view></view>
+            </view>
+            <image src="{{img[0]}}" mode="aspectFill"></image>
+          </view>
+        </view>
+        
+      </view>
+      <view wx:else>
+        <view class="cu-item shadow">
+          <view class="title">
+            <view class="text-xxl">{{title}}</view>
+          </view>
+          <view class="content">
+            <view class="desc">
+              <view class="text-content">
+              <view>纬度：{{wd}}；经度：{{jd}}</view>
+              <view>{{content}}</view>
+              <view>{{cTime}}</view></view>
+            </view>
+          </view>
+        </view>
+        </view>
+      <!-- <view class="infos">
+        <view wx:if="{{img!=''}}">
+          <view class="haspic">
+            <view class="titleanddis">
+              <view class="item_title">{{title}}</view>
+              <view class="item_dis">维度：{{wd}}；经度：{{jd}}</view>
+              <view class="item_dis">{{content}}</view>
+            </view>
+            <view class="date short">{{cTime}}</view>
+          </view>
+
+          <view class="item_pic">
+            <image mode="aspectFill" src="{{img[0]}}" class="pic" background-size="cover" model="scaleToFill"></image>
+          </view>
+        </view>
+
+        <view wx:else>
+          <view class="nopic">
+            <view class="titleanddis">
+              <view class="item_title">{{title}}</view>
+              <view class="item_dis">维度：{{wd}}；经度：{{jd}}</view>
+              <view class="item_dis">{{content}}</view>
+            </view>
+            <view class="date short">{{cTime}}</view>
+          </view>
+        </view>
+      </view> -->
+    </navigator>
+  </template>
+  <!--文章列表模板 end-->
+
+  <!--循环输出列表 begin-->
+  <view wx:if="{{shuzu.length>0}}"  wx:for="{{shuzu}}" class="list">
+    <template is="itmes" data="{{...item}}" />
+  </view>
+  <view wx:if="{{shuzu.length==0}}" class="nocontent">
+    目前这里还没有智能小车的上传信息
+  </view>
+  <button class="btn-block" hover-class="s_btn-block" bindtap="mefuntion">
+    <mp-icon type="field" icon="add" color="white" size="{{25}}"></mp-icon>上传
+  </button>
+</view>

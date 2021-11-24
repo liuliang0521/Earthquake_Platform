@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "上传智能无人机信息",
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon"
+  }
+}

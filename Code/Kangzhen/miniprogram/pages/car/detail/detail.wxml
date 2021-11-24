@@ -1,0 +1,20 @@
+<!--detail.wxml-->
+  <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">智能小车详细信息</view>
+</cu-custom>
+<view class="detail">
+  <view>
+    <view class="text-xxl text-center text-bold">{{detail_content.title}}</view>
+    <view class="text-df text-grey text-center">纬度：{{detail_content.wd}}；经度：{{detail_content.jd}}</view>
+    <view class="text-df  text-grey text-center">{{detail_content.cTime}}</view>
+    <view wx:for="{{detail_content.img}}" class="img">
+      <image src="{{detail_content.img[index]}}"  class="in_img"  mode="widthFix"></image>
+    </view>
+    <view class="content2">{{detail_content.content}}</view>
+    <button class="btn-block" bindtap="delete_message">
+      <mp-icon type="field" color="black" size="{{25}}"></mp-icon>
+      删除信息
+    </button>
+  </view>
+</view>

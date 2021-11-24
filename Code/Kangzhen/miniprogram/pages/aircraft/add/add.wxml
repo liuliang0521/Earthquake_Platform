@@ -1,0 +1,102 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">上传智能无人机信息</view>
+</cu-custom>
+<view class="add">
+  <view class="title2">
+    上传你的智能无人机的信息
+  </view>
+  <view class="cu-form-group ">
+		<view class="title">时间</view>
+		<input placeholder="{{cTime}}"></input>
+	</view>
+  <!-- <view class="contentinfo">
+    时间
+  </view>
+  <view class="in">
+    {{cTime}}
+  </view> -->
+  <view class="cu-form-group">
+		<view class="title">地点</view>
+		<input placeholder="纬度：{{wd}}；经度：{{jd}}"></input>
+    <text class="cuIcon-locationfill text-orange"></text>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">标题</view>
+		<input bindinput='title' placeholder="请输入标题" focus="{{focus}}" class="input_text input_title" />
+	</view>
+  <!-- <view class="contentinfo">
+    地点
+  </view>
+  <view class="in">
+    维度：{{wd}}；经度：{{jd}}
+  </view> -->
+  <!-- <view class="contentinfo">
+    标题
+  </view>
+  <view class="in">
+    <input bindinput='title' placeholder="请输入标题" focus="{{focus}}" class="input_text input_title" />
+  </view> -->
+
+  <view class="contentinfo">
+    请上传图片
+  </view>
+  <view class="pics">
+    <!-- 这里是添加图片的存放模板 -->
+    <!-- <view class="pic">
+      
+    </view> -->
+
+    <!-- <view  class="pics">
+      <view wx:for="{{img}}" class="inputed_pic">
+        <image mode="aspectFill" class="note_pic" src='{{img[index]}}'></image>
+      </view>
+      <view bindtap='picfunction' class="input_pic">
+        <mp-icon type="field" icon="camera" color="#999999" size="{{50}}"></mp-icon>
+        <view>添加图片</view>
+      </view>
+    </view> -->
+  </view>
+  <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			图片上传
+		</view>
+		<view class="action">
+			{{img.length}}/4
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{img}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{img[index]}}">
+				<image src='{{img[index]}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap='picfunction' wx:if="{{img.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+
+
+
+
+
+
+
+
+
+  <view class="contentinfo">
+    备注
+  </view>
+  <!-- <view class='in'>
+    <textarea bindinput="content" maxlength="300" class="input_text input_content" placeholder="请输入信息的备注"></textarea>
+  </view> -->
+	<view class="cu-form-group margin-top">
+		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="content" placeholder="请输入信息的备注"></textarea>
+	</view>
+  <view class="padding">  <button class="cu-btn block bg-gradual-green margin-tb-sm lg" bindtap='submit'>提交</button></view>
+
+
+</view>

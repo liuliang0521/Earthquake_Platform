@@ -1,0 +1,21 @@
+<!--detail.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">推荐商品详细信息</view>
+</cu-custom>
+<view class="detail">
+  <view>
+    <view class="title">推荐商品详细信息</view>
+    <view class="text-xl text-center text-bold margin-bottom">{{detail_content.name}}</view>
+    <view class="text-xl text-center text-bold margin-bottom">商品图片</view>
+    <view wx:for="{{detail_content.pic}}" class="justify-center img">
+      <image src="{{detail_content.pic[index]}}"  class="in_img" style=""  mode="widthFix"></image>
+    </view>
+    <view class="content2">{{detail_content.content}}</view>
+    <view wx:if="{{detail_content.path!=''}}" style="margin-bottom:50rpx">
+      <view class="text-xl text-center text-bold margin-bottom margin-top">购买链接</view>
+      <view class="content2">{{detail_content.path}}</view>
+      
+    </view>
+  </view>
+</view>

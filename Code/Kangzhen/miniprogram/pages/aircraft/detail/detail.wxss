@@ -1,0 +1,5 @@
+@import "../../../utils/datail.wxss";
+page{
+background-color: #fffad7;
+}
+

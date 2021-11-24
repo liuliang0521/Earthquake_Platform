@@ -1,0 +1,29 @@
+<!--detail.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">智能仓库详细信息</view>
+</cu-custom>
+<view class="detail">
+  <view>
+
+    <view class="text-xxl text-center text-bold">智能仓库详细信息</view>
+    <view class="text-df  text-grey text-center">{{detail_content.cTime}}</view>
+    <view class="text-xl text-center text-bold margin-bottom">仓库库存</view>
+    <view wx:for="{{detail_content.info_name}}" class="grid col-2  text-center"style="border: #000000 2px solid;">
+      <view class="text-bold "style="border-right: #000000 2px solid;">{{detail_content.info_name[index]}}:</view>
+      <view class="text-bold" style="">{{detail_content.info_num[index]}}</view>
+    </view>
+    <view class="text-xl text-center text-bold">原始图片</view>
+    <view class="img">
+      <image src="{{detail_content.picture}}"  class="in_img"  mode="widthFix"></image>
+    </view>
+    <view class="text-xl text-center text-bold">识别图片</view>
+    <view class="img">
+      <image src="{{detail_content.answer}}"  class="in_img"  mode="widthFix"></image>
+    </view>
+    <button class="btn-block" bindtap="delete_message">
+      <mp-icon type="field" color="black" size="{{25}}"></mp-icon>
+      删除信息
+    </button>
+  </view>
+</view>

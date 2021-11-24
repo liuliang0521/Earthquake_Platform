@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "智能仓库信息列表",
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon"
+  }
+}

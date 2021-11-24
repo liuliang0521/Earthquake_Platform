@@ -1,0 +1,70 @@
+<cu-custom bgColor="bg-gradual-blue" >
+  <view slot="backText">返回</view>
+  <view slot="content">导航栏</view>
+</cu-custom>
+<view class="homepage">
+  <view class="title">
+    <view class="version">
+      <image class="logo" src="cloud://cloud1-0g7jchkvd1307e1e.636c-cloud1-0g7jchkvd1307e1e-1308164177/start/LOGO.jpg">
+      </image>
+      <view class="version_title">抗震救灾一体化</view>
+    </view>
+    <view class="update">用科技对抗自然灾害</view>
+  </view>
+  <view class="red_line"></view>
+
+
+  <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"  indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item  wx:for="{{swiper_num}}"   class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image class="top_show"
+          src="cloud://cloud1-0g7jchkvd1307e1e.636c-cloud1-0g7jchkvd1307e1e-1308164177/start/START{{index+1}}.jpg">
+        </image>
+    </view>
+  </swiper-item>
+</swiper>
+
+
+  <!-- <swiper indicator-dots="true" indicator-color="#000000" indicator-active-color="#ff0000" autoplay="true"
+    interval="8000" duration="500" display-multiple-items="1" class="top_swiper">
+    <view wx:for="{{swiper_num}}">
+      <swiper-item>
+        <image class="top_show"
+          src="cloud://cloud1-0g7jchkvd1307e1e.636c-cloud1-0g7jchkvd1307e1e-1308164177/start/START{{index+1}}.jpg">
+        </image>
+      </swiper-item>
+    </view>
+  </swiper> -->
+  <view class='nav-list' style="margin-top:50rpx">
+    <view  bindtap="function{{index+1}}" hover-class="s_{{item.class}}"  class="nav-li bg-{{item.color}}" wx:for="{{fun_info}}" wx:key>
+      <view class="nav-title">{{item.title}}</view>
+      <view class="nav-name">{{item.title}}</view>
+      <text class='cuIcon-{{item.icon}}'></text>
+    </view>
+  </view>
+
+  <!-- <view class="fun_block" style="height:{{button_height}}rpx">
+    <view wx:for="{{fun_info}}" class="fun_button">
+      <button class="fun_button {{item.class}}" hover-class="s_{{item.class}}"
+        style="width:350rpx;height:{{button_height/2-40}}rpx" bindtap="function{{index+1}}">
+        <view class="fun_title"
+          style="font-size:{{(button_height/2-60)/120}};line-height:{{(button_height/2-60)/110}};">{{item.title}}</view>
+        <mp-icon type="outline" icon="{{item.icon}}" color="black" size="{{(button_height/2-90)/2.5}}"></mp-icon>
+      </button>
+    </view>
+  </view> -->
+  <view class="cu-bar bg-white">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue">关于我们</text>
+      <text class="text-ABC text-blue">about</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+  <view class="explaination">
+    本程序为抗震救灾一体化小程序，所有权利归大连理工大学开发团队所有
+  </view>
+
+  <view class="red_line in_bottom">
+  </view>
+
+</view>

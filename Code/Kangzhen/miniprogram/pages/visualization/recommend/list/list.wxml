@@ -1,0 +1,35 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">推荐系统信息列表</view>
+</cu-custom>
+
+<view class="body">
+  <!--文章列表模板 begin-->
+  <template name="itmes">
+    <navigator  url="../detail/detail?id={{id}}" class="cu-card article no-card">
+  <view class="cu-item shadow" wx:if="{{pic!=''}}">
+    <view class="title">
+      <view class="text-cut">{{n}}</view>
+    </view>
+    <view class="content">
+      <image src="{{pic[0]}}" mode="aspectFit"></image>
+      <view class="desc">
+        <view class="text-content">{{name}}</view>
+        <view wx:if="{{labels}}">
+          <view wx:if="{{labels.length>0}}" wx:for="{{labels.length}}" class="cu-tag bg-green light sm round">{{labels[index]}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</navigator>
+  </template>
+  <!--文章列表模板 end-->
+
+  <!--循环输出列表 begin-->
+  <view wx:if="{{need.length>0}}"  wx:for="{{need}}" class="list">
+    <template is="itmes" data="{{...shuzu[item]}}" />
+  </view>
+  <view wx:if="{{need.length==0}}" class="nocontent">
+    目前这里还没有智能推荐的推荐信息
+  </view>
+</view>

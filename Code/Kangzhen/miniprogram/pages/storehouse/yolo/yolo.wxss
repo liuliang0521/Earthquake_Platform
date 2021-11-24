@@ -1,0 +1,47 @@
+/* pages/page1/page1.wxss */
+#body {  
+    padding: 30rpx;
+}
+
+.button {
+    width: auto !important;
+    color:white;
+    font-size: 45rpx;
+    background-color: rgb(0,163,62);
+}
+
+.title {
+    margin: 20rpx 0;
+    font-size: 45rpx;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 45rpx;
+}
+
+.tr {
+    display: table-row;
+}
+
+.th,
+.td {
+    display: table-cell;
+    padding: 5rpx;
+    border: 1rpx solid white;
+}
+
+.th {
+    background-color: rgb(189,203,19);
+}
+
+.tr:nth-child(2n) {
+    background-color: rgb(234,230,190);
+}
+
+image {
+    width: 100%;
+}
